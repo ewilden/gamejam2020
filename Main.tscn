@@ -1,10 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 2.14954, 1195.61 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 1293.3, 595.037 )
+b = Vector2( -756.469, 593.583 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 481.413, 291.544 )
+position = Vector2( 1121.11, 648.224 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2047.02, 5.81543 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 756.997, 608.198 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 755.87, -593.531 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1025.45, 604.805 )
+current = true
+zoom = Vector2( 2, 2 )

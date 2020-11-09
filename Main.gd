@@ -10,12 +10,15 @@ extends Node2D
 func _ready():
 	pass # Replace with function body.
 
-
+var time_since_press_start = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Character/SpriteLaser.visible = Input.is_action_pressed("click")
 	if Input.is_action_pressed("click"):
-		$Character.look_follow(get_tree().get_root().get_mouse_position())
+		$Character.look_follow(get_global_mouse_position())
+		time_since_press_start += delta
+	if Input.is_action_just_pressed("click"):
+		time_since_press_start = 0
 	if Input.is_action_just_released("click"):
-		$Character.boost_to(get_tree().get_root().get_mouse_position())
+		$Character.boost_to(get_global_mouse_position(), time_since_press_start)
 		

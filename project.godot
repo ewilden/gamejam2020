@@ -19,6 +19,12 @@ config/name="Gamejam"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=720
+window/size/height=1280
+window/dpi/allow_hidpi=true
+
 [input]
 
 click={

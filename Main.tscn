@@ -1,20 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SegmentShape2D" id=1]
-b = Vector2( 2.14954, 1195.61 )
+b = Vector2( -0.778687, 1312.88 )
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( 1293.3, 595.037 )
+a = Vector2( 81.8798, 593.226 )
 b = Vector2( -756.469, 593.583 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1121.11, 648.224 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -24,13 +22,13 @@ shape = SubResource( 1 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 2047.02, 5.81543 )
+position = Vector2( 716.464, 3.80078 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 756.997, 608.198 )
+position = Vector2( 756.997, 699.832 )
 shape = SubResource( 2 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
@@ -40,6 +38,11 @@ position = Vector2( 755.87, -593.531 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1025.45, 604.805 )
+position = Vector2( 355.003, 644.429 )
 current = true
-zoom = Vector2( 2, 2 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( 306.112, 979.667 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 335.878, 172.503 )

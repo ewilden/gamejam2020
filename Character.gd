@@ -17,12 +17,11 @@ func look_follow(pos: Vector2):
 func look_follow_impl(state: Physics2DDirectBodyState, 
 		current_transform: Transform2D, 
 		target_position: Vector2):
-#	current_transform.basis_xform()
 	var cur_dir = current_transform.basis_xform(Vector2(0, -1))
 	var target_dir = (target_position - current_transform.origin).normalized()
 	var rotation_angle = cur_dir.angle_to(target_dir)
 	state.set_angular_velocity((rotation_angle / state.get_step()))
-#
+
 func _integrate_forces(state):
 	if is_looking:
 		var target_position = looking_at_pos

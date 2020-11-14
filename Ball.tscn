@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/kenney_sportspack/PNG/Equipment/ball_basket2.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 50.0
+
+[node name="Ball" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0515747, -0.0955048 )
+shape = SubResource( 1 )
+
+[node name="ball_basket2" type="Sprite" parent="."]
+position = Vector2( -0.0277848, -0.498457 )
+scale = Vector2( 5.50858, 5.50858 )
+texture = ExtResource( 1 )

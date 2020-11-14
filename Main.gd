@@ -13,12 +13,13 @@ func _ready():
 var time_since_press_start = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Character/SpriteLaser.visible = Input.is_action_pressed("click")
+	$Player/SpriteLaser.visible = Input.is_action_pressed("click")
 	if Input.is_action_pressed("click"):
-		$Character.look_follow(get_global_mouse_position())
+		$Player.look_follow(get_global_mouse_position())
+		$Enemy.look_follow(get_global_mouse_position())
 		time_since_press_start += delta
 	if Input.is_action_just_pressed("click"):
 		time_since_press_start = 0
 	if Input.is_action_just_released("click"):
-		$Character.boost_to(get_global_mouse_position(), time_since_press_start)
-		
+		$Player.boost_to(get_global_mouse_position(), time_since_press_start)
+		$Enemy.boost_to(get_global_mouse_position(), time_since_press_start)		

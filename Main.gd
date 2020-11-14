@@ -22,4 +22,4 @@ func _process(delta):
 		time_since_press_start = 0
 	if Input.is_action_just_released("click"):
 		$Player.boost_to(get_global_mouse_position(), time_since_press_start)
-		$Enemy.boost_to(get_global_mouse_position(), time_since_press_start)		
+		$Enemy.boost_to(get_global_mouse_position(), time_since_press_start)

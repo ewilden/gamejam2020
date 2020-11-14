@@ -40,13 +40,16 @@ shape = SubResource( 2 )
 position = Vector2( 580.705, -904.935 )
 shape = SubResource( 2 )
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+[node name="Halfline" type="StaticBody2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Halfline"]
 position = Vector2( 574.747, 51.3502 )
 shape = SubResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="Halfline"]
+points = PoolVector2Array( -182.565, 648.405, 895.706, 648.405 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 355.003, 644.429 )

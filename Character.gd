@@ -4,6 +4,7 @@ var looking_at_pos = Vector2(0, 0)
 var is_looking = false
 
 func boost_to(pos: Vector2, click_duration: float):
+	click_duration = min(click_duration, 600)
 #	return
 	var dist_sq = position.distance_squared_to(pos)
 	apply_impulse(Vector2(0, 0), 

@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/kenney_sportspack/PNG/Equipment/ball_basket2.png" type="Texture" id=1]
+[ext_resource path="res://Ball.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
-bounce = 2.0
+bounce = 0.7
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/Manrope-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = SubResource( 2 )
 
 [node name="Ball" type="RigidBody2D"]
 mass = 0.6
 physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
 
 [node name="ball_basket2" type="Sprite" parent="."]
 visible = false
@@ -20,4 +29,17 @@ polygon = PoolVector2Array( -34.942, -80.2861, 33.7841, -80.7157, 80.1743, -35.6
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2( 0.429535, 0 )
+color = Color( 0.729412, 0.266667, 0.266667, 1 )
 polygon = PoolVector2Array( -33.6534, -78.1385, 33.7841, -78.9975, 81.0334, -35.6141, 80.6038, 39.5551, 33.3546, 83.368, -35.3716, 83.368, -80.0436, 37.8369, -80.4731, -34.3255 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -36.3068
+margin_top = -44.9298
+margin_right = 37.6932
+margin_bottom = 44.0702
+custom_fonts/font = SubResource( 3 )
+text = "5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
